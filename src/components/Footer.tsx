@@ -10,7 +10,6 @@ export const Footer = () => (
           Anastasiia Zlahodukh
         </a>
       </p>
-      <p>All rights reserved © 2026</p>
     </footer>
   );
   
