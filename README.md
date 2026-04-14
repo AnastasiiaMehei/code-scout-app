@@ -19,9 +19,10 @@ API used in the project: [GitHub REST API](https://docs.github.com/en/rest)
 
 💻 Preview
 
-<img width="517" height="351" alt="image" src="https://github.com/user-attachments/assets/556c7eb3-91d8-4dee-887d-6d4e1d8c6700" />
-<img width="516" height="352" alt="image" src="https://github.com/user-attachments/assets/cfd7049b-5c11-4b08-8767-ef2c7be1adc2" />
-<img width="514" height="350" alt="image" src="https://github.com/user-attachments/assets/1444bbec-2446-4692-8758-ae7cbed73768" />
+<img width="708" height="347" alt="image" src="https://github.com/user-attachments/assets/d27dbd88-116c-42c6-a14d-ccebed222efd" />
+<img width="708" height="348" alt="image" src="https://github.com/user-attachments/assets/fb54a014-4e51-4f3f-98dd-bec50f78e67a" />
+![Uploading image.png…]()
+
 
 💡 Features
 ✔️ Search for a GitHub user  
