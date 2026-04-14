@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState, AppDispatch } from "../store";
 import { setQuery, addUser, deleteUser } from "../store/userSlice";
 import { UserCard } from "../components/UserCard";
+import "react-toastify/dist/ReactToastify.css";
 import "../App.css";
 import styles from "./Home.module.css";
 export const Home = () => {
@@ -17,9 +18,11 @@ export const Home = () => {
       const response = await axios.get(`https://api.github.com/users/${query}`);
       dispatch(addUser(response.data));
       dispatch(setQuery(""));
-    } catch {
+    } catch (error) {
+      console.error(error);
       toast.error("User not found 🚀");
     }
+    
   };
 
   return (
