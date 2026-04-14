@@ -60,7 +60,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <header className="header">
-        <h1>Code Scout App</h1>
+        <p className="headerTitle">Code Scout App</p>
         <input
           type="text"
           placeholder="Enter GitHub username"
