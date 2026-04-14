@@ -4,7 +4,8 @@ body, #root {
   background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
   font-family: 'Inter', sans-serif;
   color: #e0e0e0;
-  /* overflow: hidden; */
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 
 .app-wrapper {
@@ -16,17 +17,24 @@ body, #root {
 }
 
 .header {
-  padding: 20px;
+  display: flex;
+  padding: 0 20px;
   text-align: center;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 0.05);
   border-top: 1px solid #444;
+  align-items: center;
 }
 
 .headerTitle {
   font-size: 41px;
   line-height: 1.3;
   color: var(--accent);
+}
+.headerClock {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-top: 8px;
 }
 
 .main-content {

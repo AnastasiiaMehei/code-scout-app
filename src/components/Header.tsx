@@ -1,5 +1,10 @@
-export const Header = () => (
-  <header className="header">
-    <h1 className="headerTitle">Code Scout App</h1>
-  </header>
-);
+import { HeaderClock } from "./HeaderClock";
+
+export const Header = () => {
+  return (
+    <header className="header">
+      <h1 className="headerTitle">GitHub Explorer</h1>
+      <HeaderClock />
+    </header>
+  );
+};
