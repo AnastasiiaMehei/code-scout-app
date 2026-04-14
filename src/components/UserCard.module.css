@@ -1,0 +1,91 @@
+.container {
+    flex: 1 1 300px; 
+    max-width: 320px;
+    height: 340px;
+    max-height: 340px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(240, 98, 146, 0.3);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+  
+  .container:hover {
+    transform: translateY(-1px);
+  }
+  
+  .avatar {
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(66, 165, 245, 0.5);
+  }
+  
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bio {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stats {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .link, .button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #42a5f5, #7e57c2, #f06292);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    font-size: 14px;
+  }
+  
+  .link:hover, .button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(66, 165, 245, 0.8),
+                0 0 30px rgba(126, 87, 194, 0.6),
+                0 0 40px rgba(240, 98, 146, 0.5);
+  }
+  
+  .deleteButton {
+    border-radius: 100%;
+    border: none;
+    background: linear-gradient(135deg, #ef5350, #d32f2f);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    padding: 5px 9px;
+  }
+  
+  .deleteButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(239, 83, 80, 0.7);
+  }
+  

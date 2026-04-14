@@ -1,0 +1,12 @@
+
+.userList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    /* height: 600px; */
+    min-height: 405px;
+    overflow-y: auto;
+    padding-top: 15px;
+  }
+  

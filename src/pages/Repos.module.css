@@ -1,0 +1,56 @@
+.repoList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    min-height: 405px;
+    overflow-y: auto;
+    padding-top: 15px;
+  }
+  .cosmicTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #42a5f5, #7e57c2, #f06292);
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+      0 0 10px rgba(66, 165, 245, 0.8),
+      0 0 20px rgba(126, 87, 194, 0.6),
+      0 0 30px rgba(240, 98, 146, 0.5);
+    letter-spacing: 2px;
+    animation: cosmicGlow 3s infinite alternate;
+    color: #fff;
+  }
+  
+  @keyframes cosmicGlow {
+    from {
+      text-shadow: 
+        0 0 10px rgba(66, 165, 245, 0.8),
+        0 0 20px rgba(126, 87, 194, 0.6),
+        0 0 30px rgba(240, 98, 146, 0.5);
+    }
+    to {
+      text-shadow: 
+        0 0 20px rgba(240, 98, 146, 0.8),
+        0 0 30px rgba(126, 87, 194, 0.7),
+        0 0 40px rgba(66, 165, 245, 0.6);
+    }
+  }
+  .backButton {
+    margin: 15px 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #42a5f5, #7e57c2, #f06292);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .backButton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(66, 165, 245, 0.8),
+                0 0 30px rgba(126, 87, 194, 0.6),
+                0 0 40px rgba(240, 98, 146, 0.5);
+  }
+  
