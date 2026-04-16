@@ -20,9 +20,17 @@ API used in the project: [GitHub REST API](https://docs.github.com/en/rest)
 💻 Preview
 
 <img width="708" height="347" alt="image" src="https://github.com/user-attachments/assets/d27dbd88-116c-42c6-a14d-ccebed222efd" />
-<img width="708" height="348" alt="image" src="https://github.com/user-attachments/assets/fb54a014-4e51-4f3f-98dd-bec50f78e67a" />
-<img width="708" height="355" alt="image" src="https://github.com/user-attachments/assets/b1acb61b-7495-4439-8440-10cc577c6a98" />
-![Uploading image.png…]()
+
+<img width="714" height="356" alt="image" src="https://github.com/user-attachments/assets/07f2133d-e491-4da5-a41b-3e96bebdeb6f" />
+
+<img width="713" height="359" alt="image" src="https://github.com/user-attachments/assets/68d03dce-cef1-453c-9da5-7c2de64be518" />
+<img width="711" height="357" alt="image" src="https://github.com/user-attachments/assets/08c99bbe-750e-4894-a1c5-e81d23d7ad40" />
+
+<img width="710" height="357" alt="image" src="https://github.com/user-attachments/assets/366fe6a5-37b0-4393-9966-6681b14d7b78" />
+
+<img width="710" height="358" alt="image" src="https://github.com/user-attachments/assets/099bad82-d331-4e2a-bfed-0d57ebba7060" />
+<img width="710" height="356" alt="image" src="https://github.com/user-attachments/assets/25513ddd-559d-4eca-87b8-a9d3dc469a5c" />
+<img width="711" height="355" alt="image" src="https://github.com/user-attachments/assets/9b573f46-a4e4-45ea-9bba-3e3436f2be53" />
 
 
 💡 Features
