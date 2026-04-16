@@ -21,6 +21,7 @@ API used in the project: [GitHub REST API](https://docs.github.com/en/rest)
 
 <img width="708" height="347" alt="image" src="https://github.com/user-attachments/assets/d27dbd88-116c-42c6-a14d-ccebed222efd" />
 <img width="708" height="348" alt="image" src="https://github.com/user-attachments/assets/fb54a014-4e51-4f3f-98dd-bec50f78e67a" />
+<img width="708" height="355" alt="image" src="https://github.com/user-attachments/assets/b1acb61b-7495-4439-8440-10cc577c6a98" />
 ![Uploading image.png…]()
 
 
