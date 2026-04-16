@@ -27,7 +27,8 @@ API used in the project: [GitHub REST API](https://docs.github.com/en/rest)
 <img width="711" height="357" alt="image" src="https://github.com/user-attachments/assets/08c99bbe-750e-4894-a1c5-e81d23d7ad40" />
 
 <img width="710" height="357" alt="image" src="https://github.com/user-attachments/assets/366fe6a5-37b0-4393-9966-6681b14d7b78" />
-![Uploading image.png…]()
+
+<img width="714" height="356" alt="image" src="https://github.com/user-attachments/assets/d60fc593-749f-450a-be5d-ca37659b97d6" />
 
 <img width="710" height="358" alt="image" src="https://github.com/user-attachments/assets/099bad82-d331-4e2a-bfed-0d57ebba7060" />
 <img width="710" height="356" alt="image" src="https://github.com/user-attachments/assets/25513ddd-559d-4eca-87b8-a9d3dc469a5c" />
