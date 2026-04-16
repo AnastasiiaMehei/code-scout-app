@@ -53,11 +53,10 @@
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     position: absolute;
-    top: 15px;
-    right: 18px;
-    padding: 5px 9px;
-  }
-  
+    top: 9px;
+    right: 9px;
+    padding: 3px 7px;
+}
   .closeButton:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(239, 83, 80, 0.7);
