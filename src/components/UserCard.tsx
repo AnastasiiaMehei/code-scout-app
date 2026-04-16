@@ -54,10 +54,14 @@ export const UserCard = ({ user, onDelete }: UserCardProps) => {
       <button onClick={() => navigate(`/repos/${user.login}`)} className={styles.button}>
           View Repositories
         </button>
-        <a href={user.html_url} target="_blank" rel="noreferrer" className={styles.link}>
-          View Profile
-        </a>
-      
+        <button
+  onClick={() => navigate(`/profile/${user.login}`)}
+  className={styles.button}
+>
+  View Profile
+</button>
+
+
       </div>
 
       <button onClick={() => onDelete(user.login)} className={styles.deleteButton}>✖</button>

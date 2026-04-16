@@ -70,7 +70,8 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: #8272ac;
+  line-height: 1.2;
 }
 
 h1 {
