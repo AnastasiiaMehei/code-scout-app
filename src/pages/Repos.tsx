@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./Repos.module.css";
 import { RepoCard } from "../components/RepoCard";
+import { Modal } from "../components/Modal";
 import type { RepoProps } from "../types/Repo";
 
 export const Repos = () => {
@@ -10,6 +11,9 @@ export const Repos = () => {
   const navigate = useNavigate();
   const [repos, setRepos] = useState<RepoProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [langStats, setLangStats] = useState<{ lang: string; percent: string }[]>([]);
+  const [selectedRepo, setSelectedRepo] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -26,6 +30,28 @@ export const Repos = () => {
     };
     fetchRepos();
   }, [username]);
+
+  const fetchLanguages = async (repoName: string) => {
+    try {
+      const response = await axios.get<Record<string, number>>(
+        `https://api.github.com/repos/${username}/${repoName}/languages`
+      );
+      const data = response.data;
+
+      const total = Object.values(data).reduce((a, b) => a + b, 0);
+
+      const percentages = Object.entries(data).map(([lang, bytes]) => ({
+        lang,
+        percent: ((bytes / total) * 100).toFixed(2),
+      }));
+
+      setLangStats(percentages);
+      setSelectedRepo(repoName);
+      setShowModal(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <section style={{ color: "#fff", textAlign: "center" }}>
@@ -47,9 +73,21 @@ export const Repos = () => {
       ) : (
         <div className={styles.repoList}>
           {repos.map((repo) => (
-            <RepoCard key={repo.id} {...repo} />
+            <RepoCard
+              key={repo.id}
+              {...repo}
+              onShowStats={() => fetchLanguages(repo.name)}
+            />
           ))}
         </div>
+      )}
+
+      {showModal && selectedRepo && (
+        <Modal
+          title={`Language stats for ${selectedRepo}`}
+          stats={langStats}
+          onClose={() => setShowModal(false)}
+        />
       )}
     </section>
   );

@@ -10,5 +10,6 @@ export interface RepoProps {
   open_issues_count: number;   
   license?: { name: string };  
   updated_at: string;         
-  html_url: string;           
+  html_url: string;    
+  onShowStats: () => void;     
 }

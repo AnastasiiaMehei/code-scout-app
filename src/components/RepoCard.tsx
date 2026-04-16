@@ -12,6 +12,7 @@ export const RepoCard = ({
   license,
   updated_at,
   html_url,
+  onShowStats,
 }: RepoProps) => {
   return (
     <div className={styles.container}>
@@ -34,6 +35,9 @@ export const RepoCard = ({
         >
           Open on GitHub
         </a>
+        <button onClick={onShowStats} className={styles.link}>
+  Show Language Stats
+</button>
       </div>
     </div>
   );
