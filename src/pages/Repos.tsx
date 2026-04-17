@@ -4,23 +4,39 @@ import { RepoCard } from "../components/RepoCard";
 import { Modal } from "../components/Modal";
 import { useRepos } from "../hooks/useRepos";
 import { useLanguages } from "../hooks/useLanguages";
+import { RotatingLines } from "react-loader-spinner";
+import { FaArrowLeft } from "react-icons/fa";
+
 
 export const Repos = () => {
   const { username } = useParams();
   const navigate = useNavigate();
+
   const { repos, loading } = useRepos(username);
-  const { langStats, selectedRepo, showModal, setShowModal, fetchLanguages } = useLanguages(username);
+  const { langStats, selectedRepo, showModal, setShowModal, fetchLanguages } =
+    useLanguages(username);
 
   return (
     <section style={{ color: "#fff", textAlign: "center" }}>
       <h2 className="cosmicTitle">Repositories of {username}</h2>
 
       <button onClick={() => navigate(-1)} className={styles.backButton}>
-        ⬅ Back
-      </button>
+  <FaArrowLeft /> Back
+</button>
+
+
 
       {loading ? (
-        <p>Loading repositories...</p>
+        <div className={styles.spinnerWrapper}>
+          <RotatingLines
+            strokeColor="white"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="50"
+            visible={true}
+          />
+          <p>Loading repositories...</p>
+        </div>
       ) : repos.length === 0 ? (
         <p>
           No repositories found.{" "}

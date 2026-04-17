@@ -1,3 +1,4 @@
+import { MdClose } from "react-icons/md";
 import styles from "./Modal.module.css";
 
 interface ModalProps {
@@ -7,7 +8,6 @@ interface ModalProps {
 }
 
 export const Modal = ({ title, stats, onClose }: ModalProps) => {
-  // Закриття при кліку на overlay
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -17,7 +17,7 @@ export const Modal = ({ title, stats, onClose }: ModalProps) => {
   return (
     <div className={styles.overlay} onClick={handleOverlayClick}>
       <div className={styles.modal}>
-        <button onClick={onClose} className={styles.closeButton}>✖</button>
+        <button onClick={onClose} className={styles.closeButton}>  <MdClose /></button>
         <h2>{title}</h2>
         {stats.length === 0 ? (
           <p>No language data available</p>

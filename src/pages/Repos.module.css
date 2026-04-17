@@ -53,4 +53,10 @@
                 0 0 30px rgba(126, 87, 194, 0.6),
                 0 0 40px rgba(240, 98, 146, 0.5);
   }
+  .spinnerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
   

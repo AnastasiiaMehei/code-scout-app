@@ -1,4 +1,5 @@
 import type { RepoProps } from "../types/Repo";
+import { FaStar, FaCodeBranch, FaEye, FaExclamationCircle } from "react-icons/fa";
 import styles from "./RepoCard.module.css";
 
 export const RepoCard = ({
@@ -20,9 +21,12 @@ export const RepoCard = ({
       {description && <p className={styles.description}>{description}</p>}
       <p className={styles.stats}>Language: {language || "N/A"}</p>
       <p className={styles.stats}>
-        ⭐ Stars: {stargazers_count} | 🍴 Forks: {forks_count} | 👀 Watchers: {watchers_count}
-      </p>
-      <p className={styles.stats}>Issues: {open_issues_count}</p>
+  <FaStar /> Stars: {stargazers_count} | <FaCodeBranch /> Forks: {forks_count} | <FaEye /> Watchers: {watchers_count}
+</p>
+<p className={styles.stats}>
+  <FaExclamationCircle /> Issues: {open_issues_count}
+</p>
+
       {license && <p className={styles.stats}>License: {license.name}</p>}
       <p className={styles.meta}>Last updated: {new Date(updated_at).toLocaleDateString()}</p>
 

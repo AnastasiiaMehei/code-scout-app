@@ -5,9 +5,10 @@ import styles from "./UserCard.module.css";
 interface UserCardProps {
   user: GitHubUser;
   onDelete: (login: string) => void;
+  onViewProfile?: () => void; 
 }
 
-export const UserCard = ({ user, onDelete }: UserCardProps) => {
+export const UserCard = ({ user, onDelete, onViewProfile }: UserCardProps) => {
   const navigate = useNavigate();
 
   return (
@@ -20,7 +21,6 @@ export const UserCard = ({ user, onDelete }: UserCardProps) => {
       {user.location && <p className={styles.info}>📍 {user.location}</p>}
       {user.email && <p className={styles.info}>✉️ {user.email}</p>}
 
-      {/* Соціальні посилання */}
       {user.blog && (
         <a href={user.blog} target="_blank" rel="noreferrer" className={styles.link}>
           🌐 {user.blog}
@@ -51,20 +51,29 @@ export const UserCard = ({ user, onDelete }: UserCardProps) => {
       </p>
 
       <div className={styles.actions}>
-      <button onClick={() => navigate(`/repos/${user.login}`)} className={styles.button}>
+        <button
+          onClick={() => navigate(`/repos/${user.login}`)}
+          className={styles.button}
+        >
           View Repositories
         </button>
-        <button
-  onClick={() => navigate(`/profile/${user.login}`)}
-  className={styles.button}
->
-  View Profile
-</button>
-
-
+        {onViewProfile ? (
+          <button onClick={onViewProfile} className={styles.button}>
+            View Profile
+          </button>
+        ) : (
+          <button
+            onClick={() => navigate(`/profile/${user.login}`)}
+            className={styles.button}
+          >
+            View Profile
+          </button>
+        )}
       </div>
 
-      <button onClick={() => onDelete(user.login)} className={styles.deleteButton}>✖</button>
+      <button onClick={() => onDelete(user.login)} className={styles.deleteButton}>
+        ✖
+      </button>
     </div>
   );
 };

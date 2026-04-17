@@ -5,11 +5,13 @@ import type { GitHubUser } from "../types/User";
 interface UserState {
   query: string;
   users: GitHubUser[];
+  lastVisitedPage: string | null;
 }
 
 const initialState: UserState = {
   query: "",
   users: [],
+  lastVisitedPage: null,
 };
 
 const userSlice = createSlice({
@@ -28,8 +30,11 @@ const userSlice = createSlice({
     deleteUser(state, action: PayloadAction<string>) {
       state.users = state.users.filter((u) => u.login !== action.payload);
     },
+    setLastVisitedPage(state, action: PayloadAction<string>) {
+      state.lastVisitedPage = action.payload;
+    },
   },
 });
 
-export const { setQuery, addUser, deleteUser } = userSlice.actions;
+export const { setQuery, addUser, deleteUser, setLastVisitedPage } = userSlice.actions;
 export default userSlice.reducer;

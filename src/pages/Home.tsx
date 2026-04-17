@@ -5,9 +5,14 @@ import "react-toastify/dist/ReactToastify.css";
 import "../App.css";
 import styles from "./Home.module.css";
 import { useSearchUser } from "../hooks/useSearchUser";
+import { useDispatch } from "react-redux";
+import { setLastVisitedPage } from "../store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const { query, users, searchUser, updateQuery, removeUser } = useSearchUser();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   return (
     <div className="app-wrapper">
@@ -29,7 +34,15 @@ export const Home = () => {
         {users.length > 0 && (
           <div className={styles.userList}>
             {users.map((user) => (
-              <UserCard key={user.login} user={user} onDelete={() => removeUser(user.login)} />
+              <UserCard
+                key={user.login}
+                user={user}
+                onDelete={() => removeUser(user.login)}
+                onViewProfile={() => {
+                  dispatch(setLastVisitedPage("/"));
+                  navigate(`/profile/${user.login}`);
+                }}
+              />
             ))}
           </div>
         )}
