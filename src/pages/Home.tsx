@@ -1,29 +1,13 @@
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
 import cardImg from "../assets/cardImg.png";
-import { useSelector, useDispatch } from "react-redux";
-import type { RootState, AppDispatch } from "../store";
-import { setQuery, addUser, deleteUser } from "../store/userSlice";
+import { ToastContainer } from "react-toastify";
 import { UserCard } from "../components/UserCard";
 import "react-toastify/dist/ReactToastify.css";
 import "../App.css";
 import styles from "./Home.module.css";
-export const Home = () => {
-  const dispatch = useDispatch<AppDispatch>();
-  const { query, users } = useSelector((state: RootState) => state.user);
+import { useSearchUser } from "../hooks/useSearchUser";
 
-  const searchUser = async () => {
-    if (query.trim() === "") return;
-    try {
-      const response = await axios.get(`https://api.github.com/users/${query}`);
-      dispatch(addUser(response.data));
-      dispatch(setQuery(""));
-    } catch (error) {
-      console.error(error);
-      toast.error("User not found 🚀");
-    }
-    
-  };
+export const Home = () => {
+  const { query, users, searchUser, updateQuery, removeUser } = useSearchUser();
 
   return (
     <div className="app-wrapper">
@@ -33,25 +17,25 @@ export const Home = () => {
           placeholder="Enter GitHub username"
           value={query}
           className="input-field"
-          onChange={(e) => dispatch(setQuery(e.target.value))}
+          onChange={(e) => updateQuery(e.target.value)}
         />
         <button onClick={searchUser} className="search-button">Search</button>
       </section>
 
       <main className={users.length === 0 ? "main-content no-scroll" : "main-content scroll"}>
-  {users.length === 0 && (
-    <img src={cardImg} alt="Card background" className="fade-image" />
-  )}
-  {users.length > 0 && (
-    <div className={styles.userList}>
-      {users.map((user) => (
-        <UserCard key={user.login} user={user} onDelete={() => dispatch(deleteUser(user.login))} />
-      ))}
-    </div>
-  )}
-  <ToastContainer aria-label="Toast container" />
-</main>
+        {users.length === 0 && (
+          <img src={cardImg} alt="Card background" className="fade-image" />
+        )}
+        {users.length > 0 && (
+          <div className={styles.userList}>
+            {users.map((user) => (
+              <UserCard key={user.login} user={user} onDelete={() => removeUser(user.login)} />
+            ))}
+          </div>
+        )}
+      </main>
 
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
